@@ -10,7 +10,7 @@
 
 > tmux a -t all
 
-> python crawl_all.py
+> python all.py
 
 ## Trong session tmux:
 
@@ -38,17 +38,17 @@
 
 # Trong trường hợp restart VPS cần chạy các lệnh sau sau khi ssh vào VPS
 
-> cd trumtruyen_nuitruyen
+> cd leechtruyen
 
 > tmux new -s update
 
-> source /venv/bin/activate
+> source venv/bin/activate
 
 > Bấm và giữ Ctrl sau đó ấn B, sau đó nhả 2 phím và ấn D (dùng để ẩn session tmux - vẫn chạy bình thường)
 
 > tmux new -s all
 
-> source /venv/bin/activate
+> source venv/bin/activate
 
 > Bấm và giữ Ctrl sau đó ấn B, sau đó nhả 2 phím và ấn D
 
