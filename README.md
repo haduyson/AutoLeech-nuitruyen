@@ -91,8 +91,9 @@ Ví dụ trường hợp hosting hiện tại
 # Cài đặt python và thư việ để crawl
 **Cài đặt python mới nhất.**
 > sudo apt update
+
 > sudo apt install python3 python3-venv python3-pip
->
+
 
 **Chạy lệnh cài đặt thư viện**
 > pip install -r requirements.txt
