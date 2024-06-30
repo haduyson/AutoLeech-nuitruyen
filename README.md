@@ -53,3 +53,37 @@
 > Bấm và giữ Ctrl sau đó ấn B, sau đó nhả 2 phím và ấn D
 
 Sau đó sử dụng theo hướng dẫn trên
+
+# Sync hình ảnh giữa VPS chạy crawl với hosting
+
+## Tạo key ssh lần đầu trên vps chạy crawl (chỉ cần 1 lần đầu)
+
+> ssh-keygen -t ed25519
+
+> Enter tới hết là được (dể default toàn bộ)
+
+## Copy ssh key của vps crawl lên hosting (chỉ cần 1 lần đầu)
+
+> ssh-copy-id user@ip
+
+> Nhập mật khẩu ssh
+
+- user: ssh user trên hosting (có quyền truy cập vào folder lưu ảnh - uploads của web) - ví dụ trường hợp hosting hiện tại thì user là `root`
+- ip: ip của hosting - ví dụ trường hợp hosting hiện tại thì ip là `103.68.251.99`
+
+## Thêm cronjob (trên vps crawl) để copy ảnh covers lên hosting 30 giây 1 lần
+
+> crontab -e
+
+> Thêm 2 dòng sau
+
+* * * * * scp -r [đường dẫn folder lưu ảnh covers trên vps crawl] user@ip:[đường dẫn folder uploads trên hosting]
+* * * * * (sleep 30; scp -r [đường dẫn folder lưu ảnh covers trên vps crawl] user@ip:[đường dẫn folder uploads trên hosting])
+
+Ví dụ trường hợp hosting hiện tại
+```
+* * * * * scp -r /www/wwwroot/nuitruyen.vn/wp-content/uploads/covers root@123.168.251.199:/www/wwwroot/nuitruyen.vn/wp-content/uploads
+* * * * * (sleep 30; scp -r /www/wwwroot/nuitruyen.vn/wp-content/uploads/covers root@123.168.251.199:/www/wwwroot/nuitruyen.vn/wp-content/uploads)
+```
+
+> Lưu và thoát
