@@ -87,3 +87,8 @@ Ví dụ trường hợp hosting hiện tại
 ```
 
 > Lưu và thoát
+
+# Sync hình ảnh giữa VPS chạy crawl với hosting
+**Cài đặt python mới nhất.**
+**Chạy lệnh cài đặt thư viện**
+> Pip install -r requirements.txt
