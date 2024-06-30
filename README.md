@@ -69,7 +69,7 @@ Sau đó sử dụng theo hướng dẫn trên
 > Nhập mật khẩu ssh
 
 - user: ssh user trên hosting (có quyền truy cập vào folder lưu ảnh - uploads của web) - ví dụ trường hợp hosting hiện tại thì user là `root`
-- ip: ip của hosting - ví dụ trường hợp hosting hiện tại thì ip là `103.68.251.99`
+- ip: ip của hosting - ví dụ trường hợp hosting hiện tại thì ip là `123.168.251.199`
 
 ## Thêm cronjob (trên vps crawl) để copy ảnh covers lên hosting 30 giây 1 lần
 
